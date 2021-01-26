@@ -1,0 +1,23 @@
+{
+  "name": "holo-ui-kit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asimolmez/holo-ui-kit.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asimolmez/holo-ui-kit/issues"
+  },
+  "homepage": "https://github.com/asimolmez/holo-ui-kit#readme",
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-native": "^0.63.4"
+  }
+}
