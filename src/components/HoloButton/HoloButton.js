@@ -1,36 +1,24 @@
 import React from 'react';
-import { ActivityIndicator, Button, View, StyleSheet } from 'react-native';
+import { Button, View } from 'react-native';
+import { themeService } from '../../services/ThemeService';
+
+let theme;
 
 const HoloButton = (props) => {
   const {
-    loading,
+    appType,
   } = props;
 
+  theme = themeService.getCurrentTheme(appType);
+
   return (
-    <View style={styles.container}>
+    <View style={{width: 200, backgroundColor: theme.colors.primary,}}>
       <Button
         title="Loading Button"
-        disabled={loading}
         onPress={() => { }} />
-      {loading && (
-        <ActivityIndicator
-          style={styles.indicator}
-          animating
-        />
-      )}
     </View>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    width: 200,
-  },
-  indicator: {
-    position: 'absolute',
-    top: 8,
-    right: 8,
-  }
-})
 
 export default HoloButton;
