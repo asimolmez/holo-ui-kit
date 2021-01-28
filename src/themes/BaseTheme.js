@@ -42,11 +42,11 @@ export const BASE_THEME = {
         material: {
             line: {
                 color: "#EAEDF2",
-                width: "1px",
+                width: 1,
             },
             surface1: {
                 color: "#FFFFFF",
-                bgBlur: "4px",
+                bgBlur: 4,
             },
             surface2: "", //TBD
             surface3: "", //TBD
@@ -54,7 +54,7 @@ export const BASE_THEME = {
         shadow: {
             color: "#000C24",
             offset: 0,
-            blur: "12px",
+            blur: 12,
             spread: 0,
         },
         shadow2: "", //TBD
