@@ -8,7 +8,7 @@ class HoloButton extends Component {
   }
 
   render() {
-    const theme = themeService.getCurrentTheme(appType);
+    const theme = themeService.getTheme();
 
     const {
       appType,

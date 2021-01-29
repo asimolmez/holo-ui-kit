@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/asimolmez/holo-ui-kit#readme",
   "dependencies": {
+    "@callstack/react-theme-provider": "^2.1.0",
     "react": "^17.0.1",
     "react-native": "^0.63.4"
   }
