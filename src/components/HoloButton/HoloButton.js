@@ -1,26 +1,31 @@
 import React, { Component } from 'react';
 import { Text, TouchableWithoutFeedback, View } from 'react-native';
-import { themeService } from '../../services/ThemeService';
-class HoloButton extends Component {
+import { ThemeProvider, withTheme } from '../../services/ThemeService';
+
+
+
+class HoloButtonComponent extends Component {
 
   state = {
     isFocused: false,
   }
 
   render() {
-    const theme = themeService.getTheme();
-
     const {
       appType,
       disabled,
       label,
+      theme: themeData,
     } = this.props;
+
+    const theme = themeData[appType]; 
 
     const {
       isFocused,
     } = this.state;
   
     return (
+      <ThemeProvider>
       <TouchableWithoutFeedback onPressIn={this._onPressIn} onPressOut={this._onPressOut}>
         <View style={{
           width: 200,
@@ -41,6 +46,7 @@ class HoloButton extends Component {
           </Text>
         </View>
       </TouchableWithoutFeedback>
+      </ThemeProvider>
     );
   }
 
@@ -58,4 +64,4 @@ class HoloButton extends Component {
   }
 }
 
-export default HoloButton;
+export default withTheme(HoloButtonComponent);
