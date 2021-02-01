@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { Text, TouchableWithoutFeedback, View } from 'react-native';
 import { ThemeProvider, withTheme } from '../../services/ThemeService';
 
-
-
 class HoloButtonComponent extends Component {
 
   state = {
@@ -12,13 +10,13 @@ class HoloButtonComponent extends Component {
 
   render() {
     const {
-      appType,
       disabled,
       label,
-      theme: themeData,
+      theme,
+      backgroundColor = theme.colors.primary,
+      disabledBackgroundColor = theme.colors.primary,
+      focusedBackgroundColor = theme.colors.primary_1,
     } = this.props;
-
-    const theme = themeData[appType]; 
 
     const {
       isFocused,
@@ -31,7 +29,7 @@ class HoloButtonComponent extends Component {
           width: 200,
           height: 44,
           justifyContent: "center",
-          backgroundColor: disabled ? theme.colors.primary : isFocused ? theme.colors.primary_1 : theme.colors.primary,
+          backgroundColor: disabled ? disabledBackgroundColor : isFocused ? focusedBackgroundColor : backgroundColor,
           borderRadius: 32,
           opacity: disabled ? 0.3 : 1,
         }}>
