@@ -23,7 +23,6 @@ class HoloButtonComponent extends Component {
     } = this.state;
   
     return (
-      <ThemeProvider>
       <TouchableWithoutFeedback onPressIn={this._onPressIn} onPressOut={this._onPressOut}>
         <View style={{
           width: 200,
@@ -44,7 +43,6 @@ class HoloButtonComponent extends Component {
           </Text>
         </View>
       </TouchableWithoutFeedback>
-      </ThemeProvider>
     );
   }
 
