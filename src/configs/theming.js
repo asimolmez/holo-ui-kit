@@ -1,7 +1,7 @@
 import { createTheming } from '@callstack/react-theme-provider';
 import { DEFAULT_THEME } from "../themes";
 
-const ThemeContext = {
+const UiKitContext = {
     withTheme: null, 
     useTheme: null,
     ThemeProvider: null,
@@ -10,9 +10,9 @@ const ThemeContext = {
 const initTheme = function(themeData) {
     console.log(themeData);
     const { withTheme, useTheme, ThemeProvider } = createTheming(themeData);
-    ThemeContext.withTheme = withTheme;
-    ThemeContext.useTheme = useTheme;
-    ThemeContext.ThemeProvider = ThemeProvider;
+    UiKitContext.withTheme = withTheme;
+    UiKitContext.useTheme = useTheme;
+    UiKitContext.ThemeProvider = ThemeProvider;
 };
 
 function getDefaultThemeData ()  {
@@ -20,4 +20,4 @@ function getDefaultThemeData ()  {
 }
 
 
-export {ThemeContext, initTheme, getDefaultThemeData};
+export {UiKitContext, initTheme, getDefaultThemeData};

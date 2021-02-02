@@ -1,7 +1,7 @@
 import HoloButton from "./src/components/HoloButton/HoloButton";
-import {ThemeContext, initTheme} from "./src/configs/theming";
+import {UiKitContext, initTheme} from "./src/configs/theming";
 export {
     HoloButton,
-    ThemeContext,
+    UiKitContext,
     initTheme,
 }

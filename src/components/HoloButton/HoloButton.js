@@ -1,14 +1,14 @@
 import React from 'react';
 import { Text, TouchableWithoutFeedback, View } from 'react-native';
-import {ThemeContext, getDefaultThemeData} from '../../configs/theming';
+import {UiKitContext, getDefaultThemeData} from '../../configs/theming';
 
 export default function HoloButton(props) {
 
-  if (!ThemeContext.useTheme) {
+  if (!UiKitContext.useTheme) {
     return null;
   }
   
-  const theme = ThemeContext.useTheme(props.theme);
+  const theme = UiKitContext.useTheme(props.theme);
   const defaultTheme = getDefaultThemeData();
 
   const {
