@@ -1,34 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Text, TouchableWithoutFeedback, View } from 'react-native';
-import { ThemeProvider, withTheme } from '../../services/ThemeService';
+import { useTheme } from '../../services/ThemeService';
 
-class HoloButtonComponent extends Component {
+export default function HoloButton(props) {
+  const theme = props.useTheme ? props.useTheme() : useTheme();
+  const defaulTheme = useTheme();
 
-  state = {
-    isFocused: false,
-  }
+  const {
+    disabled,
+    label,
+    isFocused
+  } = props;
 
-  render() {
-    const {
-      disabled,
-      label,
-      theme,
-      backgroundColor = theme.colors.primary,
-      disabledBackgroundColor = theme.colors.primary,
-      focusedBackgroundColor = theme.colors.primary_1,
-    } = this.props;
-
-    const {
-      isFocused,
-    } = this.state;
-  
-    return (
-      <TouchableWithoutFeedback onPressIn={this._onPressIn} onPressOut={this._onPressOut}>
+ 
+  return (
+      <TouchableWithoutFeedback >
         <View style={{
           width: 200,
           height: 44,
           justifyContent: "center",
-          backgroundColor: disabled ? disabledBackgroundColor : isFocused ? focusedBackgroundColor : backgroundColor,
+          backgroundColor: disabled ? theme.colors.primary : isFocused ? theme.colors.primary_1 : theme.colors.primary,
           borderRadius: 32,
           opacity: disabled ? 0.3 : 1,
         }}>
@@ -36,28 +27,12 @@ class HoloButtonComponent extends Component {
             fontSize: 16,
             lineHeight: 24,
             textAlign: "center",
-            color: theme.baseTheme.colors.basicColors.diamond,
+            color: defaulTheme.baseTheme.colors.basicColors.diamond,
             opacity: disabled ? 1 : isFocused ? 0.7 : 1
           }}>
             {label}
           </Text>
         </View>
       </TouchableWithoutFeedback>
-    );
-  }
-
-
-  _onPressIn = () => {
-    this.setState({
-      isFocused: true
-    });
-  }
-
-  _onPressOut = () => {
-    this.setState({
-      isFocused: false
-    });
-  }
+  );
 }
-
-export default withTheme(HoloButtonComponent);
