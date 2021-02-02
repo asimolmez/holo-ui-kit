@@ -1,16 +1,15 @@
 import React from 'react';
 import { Text, TouchableWithoutFeedback, View } from 'react-native';
-import {ThemeContext} from '../../configs/theming';
-import { useTheme } from '../../services/ThemeService';
-import { AVA_THEME } from '../../themes';
+import {ThemeContext, getThemeData} from '../../configs/theming';
 
 export default function HoloButton(props) {
 
   if (!ThemeContext.useTheme) {
-    return null
+    return null;
   }
+
   const theme = ThemeContext.useTheme();
-  const defaultTheme = AVA_THEME;
+  const defaultTheme = getThemeData();
 
   const {
     disabled,
