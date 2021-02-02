@@ -1,5 +1,5 @@
-import { AVA_THEME } from "./AvaTheme";
+import { DEFAULT_THEME } from "./DefaultTheme";
 
 export {
-    AVA_THEME,
+    DEFAULT_THEME,
 }

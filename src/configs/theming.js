@@ -1,10 +1,10 @@
 import { createTheming } from '@callstack/react-theme-provider';
-import { AVA_THEME } from "../themes";
+import { DEFAULT_THEME } from "../themes";
 
 const ThemeContext = {
     withTheme: null, 
     useTheme: null,
-    themeProvider: null,
+    ThemeProvider: null,
 }
 
 const initTheme = function(themeData) {
@@ -12,12 +12,12 @@ const initTheme = function(themeData) {
     const { withTheme, useTheme, ThemeProvider } = createTheming(themeData);
     ThemeContext.withTheme = withTheme;
     ThemeContext.useTheme = useTheme;
-    ThemeContext.themeProvider = ThemeProvider;
+    ThemeContext.ThemeProvider = ThemeProvider;
 };
 
-function getThemeData ()  {
-    return AVA_THEME;
+function getDefaultThemeData ()  {
+    return DEFAULT_THEME;
 }
 
 
-export {ThemeContext, initTheme, getThemeData};
+export {ThemeContext, initTheme, getDefaultThemeData};

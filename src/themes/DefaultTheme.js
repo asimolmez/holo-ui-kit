@@ -1,6 +1,6 @@
 import { BASE_THEME } from "./BaseTheme";
 
-export const AVA_THEME = {
+export const DEFAULT_THEME = {
     colors: {
         primary3: "#E1EFF2",
         primary2: "#B8D9E0",
