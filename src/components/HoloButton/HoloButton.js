@@ -1,10 +1,16 @@
 import React from 'react';
 import { Text, TouchableWithoutFeedback, View } from 'react-native';
+import {ThemeContext} from '../../configs/theming';
 import { useTheme } from '../../services/ThemeService';
+import { AVA_THEME } from '../../themes';
 
 export default function HoloButton(props) {
-  const theme = props.useTheme ? props.useTheme() : useTheme();
-  const defaulTheme = useTheme();
+
+  if (!ThemeContext.useTheme) {
+    return null
+  }
+  const theme = ThemeContext.useTheme();
+  const defaultTheme = AVA_THEME;
 
   const {
     disabled,
@@ -26,8 +32,8 @@ export default function HoloButton(props) {
           <Text style={{
             fontSize: 16,
             lineHeight: 24,
+            color: defaultTheme.baseTheme.colors.basicColors.diamond,
             textAlign: "center",
-            color: defaulTheme.baseTheme.colors.basicColors.diamond,
             opacity: disabled ? 1 : isFocused ? 0.7 : 1
           }}>
             {label}
